@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="tg">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Барселона — Голҳои бозингарон</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;600;700&family=Teko:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="#squad">
+        <img
+          class="crest"
+          src="https://upload.wikimedia.org/wikipedia/en/thumb/4/47/FC_Barcelona_%28crest%29.svg/120px-FC_Barcelona_%28crest%29.svg.png"
+          alt="Нишони Барселона"
+        />
+        <span class="brand-text">
+          <strong>FC BARCELONA</strong>
+          <span>Мавсими 2026/27</span>
+        </span>
+      </a>
+      <p class="hint">Аксро пахш кунед — голҳо ҳамин ҷо нишон дода мешаванд</p>
+    </header>
+
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="kicker">Ҳайати дастаи якум</p>
+        <h1>Ҳамаи бозингарон.<br /><em>Голҳояшон дар як клик.</em></h1>
+        <p>
+          Акси бозингарро пахш кунед. Масалан, акси
+          <strong>Ламин Ямал</strong>-ро пахш кунед — голҳои задааш
+          ҳамин ҷо, бе YouTube, нишон дода мешаванд.
+        </p>
+      </div>
+    </section>
+
+    <div class="controls">
+      <input
+        id="search"
+        class="search"
+        type="search"
+        placeholder="Номи бозингарро ҷустуҷӯ кунед, масалан: Yamal"
+      />
+      <div class="filters">
+        <button class="chip active" data-filter="all">Ҳама</button>
+        <button class="chip" data-filter="gk">Дарвозабонҳо</button>
+        <button class="chip" data-filter="df">Ҳимоятгарон</button>
+        <button class="chip" data-filter="mf">Нимҳимоятгарон</button>
+        <button class="chip" data-filter="fw">Ҳамлагарон</button>
+      </div>
+    </div>
+
+    <main class="section" id="squad"></main>
+    <p class="empty" id="empty">Бозингар ёфт нашуд.</p>
+
+    <footer class="footer">
+      Вебсайти мухлисон. Голҳо дар худи сайт нишон дода мешаванд.
+    </footer>
+
+    <div class="modal" id="modal" role="dialog" aria-modal="true">
+      <div class="modal-card">
+        <div class="modal-head">
+          <div>
+            <h3 id="modalTitle">Голҳо</h3>
+            <p id="modalSub"></p>
+          </div>
+          <button class="close" id="closeModal" aria-label="Пӯшидан">×</button>
+        </div>
+        <div class="replay" id="replay">
+          <div class="stage">
+            <div class="crowd"></div>
+            <div class="pitch">
+              <div class="goal">
+                <span class="net"></span>
+              </div>
+              <div class="shooter" id="shooter"></div>
+              <div class="ball" id="ball"></div>
+            </div>
+            <div class="scoreboard">
+              <b id="boardScore">BAR 0-0</b>
+              <span id="boardMeta">La Liga · 0'</span>
+            </div>
+            <div class="gol" id="golFlash">ГОЛ!</div>
+            <img class="face" id="replayFace" alt="" />
+            <p class="how" id="replayHow"></p>
+          </div>
+          <div class="film-bar">
+            <button type="button" id="prevGoal" aria-label="Голи қаблӣ">◀</button>
+            <button type="button" id="playGoal" aria-label="Навозиш">❚❚</button>
+            <button type="button" id="nextGoal" aria-label="Голи навбатӣ">▶</button>
+            <div class="progress"><i id="barFill"></i></div>
+            <span id="goalCount">1/1</span>
+          </div>
+          <div class="goal-list" id="goalList"></div>
+        </div>
+      </div>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
